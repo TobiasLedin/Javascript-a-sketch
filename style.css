@@ -1,0 +1,144 @@
+:root {
+    /*--- Color-variables ---*/
+    --case: rgb(238, 48, 27);
+    --shadow: rgb(33, 20, 18);
+    --canvas: rgb(207, 180, 145);
+    --marker: rgb(68, 48, 24);
+    --text: rgb(244, 198, 47);
+    --wheel: rgb(235, 225, 153);
+    --black: rgb(0, 0, 0);
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+#info {
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#text {
+    margin: 1rem;
+    color: var(--text);
+    text-shadow: 1px 1px 3px var(--shadow);
+}
+
+/*--- General page layout container ---*/
+#layout-container {
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+}
+
+/*--- Etch-a-sketch case style features ---*/
+#main-container {
+    flex-direction: column;
+    width: 600px;
+    height: 450px;
+    min-height: 450px;
+    max-height: 450px;
+    background-color: var(--case);
+    border-radius: 25px;
+    border: 1px solid var(--shadow);
+    box-shadow: 3px 3px 5px var(--shadow), -3px 3px 5px var(--shadow);
+    transform: translate(0px) rotate(0deg);
+}
+
+/*--- Etch-a-sketch shake case to erase animation ---*/
+.shake {
+    animation-name: shake;
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-30px) rotate(-10deg);
+    }
+
+    20% {
+        transform: translate(30px) rotate(10deg);
+    }
+
+    30% {
+        transform: translate(-30px) rotate(-10deg);
+    }
+
+    40% {
+        transform: translate(30px) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(-30px) rotate(-10deg);
+    }
+
+    60% {
+        transform: translate(30px) rotate(10deg);
+    }
+
+    70% {
+        transform: translate(-30px) rotate(-10deg);
+    }
+
+    80% {
+        transform: translate(30px) rotate(10deg);
+    }
+
+    90% {
+        transform: translate(-30px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translate(0px) rotate(0deg);
+    }
+}
+
+/*--- Canvas sketch area style features ---*/
+#canvas-sketch {
+    aspect-ratio: 3/2;
+    width: 80%;
+    height: auto;
+    background-color: var(--canvas);
+    border-radius: 10px;
+    border: 3px solid var(--shadow);
+}
+
+/*--- Sketch input wheel container ---*/
+#input-wheels {
+    justify-content: space-between;
+    width: 80%;
+    height: 15%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/*--- Sketch input wheel style features ---*/
+.wheel {
+    position: absolute;
+    text-align: center;
+    font-family: Arial;
+    font-weight: 700;
+    height: 50px;
+    width: 50px;
+    background-color: var(--wheel);
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px var(--shadow);
+}
